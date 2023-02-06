@@ -34,7 +34,7 @@
 
 <main class="flex flex-col items-center justify-center gap-20 p-12">
 	<h1 class="text-center text-4xl font-semibold md:text-6xl md:font-bold">La gérance</h1>
-	<div class="flex flex-col items-center justify-center gap-6 md:flex-row">
+	<div class="flex flex-col items-center justify-center gap-6 md:flex-row md:text-xl">
 		<input
 			name="time"
 			type="datetime-local"
@@ -49,7 +49,9 @@
 		>
 	</div>
 	{#if $lateStore.length > 0}
-		<div class="w-full divide-y-2 divide-neutral-600 rounded-md border-2 border-primary-400">
+		<div
+			class="w-full max-w-lg divide-y-2 divide-neutral-600 rounded-md border-2 border-primary-400 md:text-xl"
+		>
 			{#each $lateStore as delay}
 				<div class="flex items-center justify-between gap-6 p-4">
 					<span>{delayToString(delay)}</span>
@@ -57,6 +59,7 @@
 						on:click={() => {
 							remDelay(delay);
 						}}
+						class="flex items-center justify-center"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +67,7 @@
 							viewBox="0 0 24 24"
 							stroke-width="1.5"
 							stroke="currentColor"
-							class="h-6 w-6"
+							class="h-6 w-6 md:h-8 md:w-8"
 						>
 							<path
 								stroke-linecap="round"
