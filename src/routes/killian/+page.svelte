@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { identity } from 'svelte/internal';
 	import type { PageData } from './$types';
 	export let data: PageData;
 
