@@ -9,7 +9,7 @@
 			Nombre de retards de Killian :
 		</h1>
 		<span
-			class="relative inline-block p-3 before:absolute before:-inset-1 before:block before:-skew-y-6 before:bg-primary-400 md:p-6"
+			class="relative inline-block p-3 before:absolute before:-inset-1 before:block before:-skew-y-6 before:bg-primary-400 md:p-6 md:before:-skew-y-3"
 			><span class="relative text-4xl font-bold md:text-6xl md:font-extrabold"
 				>{$lateStore.length}</span
 			></span
