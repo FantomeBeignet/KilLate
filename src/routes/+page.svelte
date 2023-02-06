@@ -3,7 +3,6 @@
 	export let data: PageData;
 </script>
 
-<div class="p-6 text-3xl font-semibold text-primary-400"><a href="/">KilLate</a></div>
 <main class="my-auto flex flex-col items-center justify-between gap-36 p-12">
 	<div class="flex flex-col items-center justify-center gap-24">
 		<h1 class="text-center text-4xl font-semibold md:text-6xl md:font-bold">
