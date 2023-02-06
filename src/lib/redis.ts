@@ -6,4 +6,6 @@ const redis = new Redis({
 	token: UPSTASH_REDIS_REST_TOKEN
 });
 
+export const databaseName = 'killate';
+
 export default redis;
