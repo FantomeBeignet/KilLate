@@ -1,6 +1,5 @@
 <script lang="ts">
-	import type { PageData } from './$types';
-	export let data: PageData;
+	import { lateStore } from '../store';
 </script>
 
 <main class="my-auto flex flex-col items-center justify-between gap-36 p-12">
@@ -11,13 +10,13 @@
 		<span
 			class="relative inline-block p-3 before:absolute before:-inset-1 before:block before:-skew-y-6 before:bg-primary-400 md:p-6"
 			><span class="relative text-4xl font-bold md:text-6xl md:font-extrabold"
-				>{data.lateCounter}</span
+				>{$lateStore.length}</span
 			></span
 		>
 	</div>
 	<a
 		href="/killian"
-		class="md:p-6 hover:decoration-400 rounded-md border-2 border-primary-400 p-4 text-xl text-primary-400 hover:underline hover:underline-offset-2 md:text-2xl"
+		class="hover:decoration-400 rounded-md border-2 border-primary-400 p-4 text-xl text-primary-400 hover:underline hover:underline-offset-2 md:p-6 md:text-2xl"
 		>Je suis Killian</a
 	>
 </main>
