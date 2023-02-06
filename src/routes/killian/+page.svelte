@@ -45,7 +45,8 @@
 			on:click={() => {
 				addDelay();
 			}}
-			class="rounded-md border-2 border-primary-400 bg-neutral-900 p-4">Valider</button
+			class="rounded-md border-2 border-primary-400 bg-neutral-900 p-4 text-primary-400 hover:underline hover:underline-offset-2"
+			>Valider</button
 		>
 	</div>
 	{#if $lateStore.length > 0}
