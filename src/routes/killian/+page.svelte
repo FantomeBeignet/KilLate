@@ -45,7 +45,7 @@
 			on:click={() => {
 				addDelay();
 			}}
-			class="rounded-md border-2 border-primary-400 bg-neutral-900 p-4 text-primary-400 hover:underline hover:underline-offset-2"
+			class="rounded-md border-2 border-primary-400 bg-neutral-900 p-4 transition-colors hover:text-primary-400"
 			>Valider</button
 		>
 	</div>
@@ -68,7 +68,7 @@
 							viewBox="0 0 24 24"
 							stroke-width="1.5"
 							stroke="currentColor"
-							class="h-6 w-6 hover:text-primary-400 md:h-8 md:w-8"
+							class="h-6 w-6 transition-colors hover:text-primary-400 md:h-8 md:w-8"
 						>
 							<path
 								stroke-linecap="round"
