@@ -68,7 +68,7 @@
 							viewBox="0 0 24 24"
 							stroke-width="1.5"
 							stroke="currentColor"
-							class="h-6 w-6 md:h-8 md:w-8"
+							class="h-6 w-6 hover:text-primary-400 md:h-8 md:w-8"
 						>
 							<path
 								stroke-linecap="round"
@@ -81,7 +81,9 @@
 			{/each}
 		</div>
 	{:else}
-		<div class="flex flex-col items-center justify-center text-center text-2xl text-neutral-600 md:text-4xl">
+		<div
+			class="flex flex-col items-center justify-center text-center text-2xl text-neutral-600 md:text-4xl"
+		>
 			<span>Killian n'a aucun retard pour le moment...</span><span>Étrange...</span>
 		</div>
 	{/if}
