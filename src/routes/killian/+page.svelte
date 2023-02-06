@@ -81,7 +81,7 @@
 			{/each}
 		</div>
 	{:else}
-		<div class="flex flex-col items-center justify-center text-center text-2xl text-neutral-600">
+		<div class="flex flex-col items-center justify-center text-center text-2xl text-neutral-600 md:text-4xl">
 			<span>Killian n'a aucun retard pour le moment...</span><span>Étrange...</span>
 		</div>
 	{/if}
