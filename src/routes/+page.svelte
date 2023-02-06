@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { lateStore } from '../store';
+	import { page } from '$app/stores';
 </script>
 
 <main class="my-auto flex flex-col items-center justify-between gap-36 p-12">
@@ -14,9 +15,18 @@
 			></span
 		>
 	</div>
-	<a
-		href="/killian"
-		class="hover:decoration-400 rounded-md border-2 border-primary-400 p-4 text-xl text-primary-400 hover:underline hover:underline-offset-2 md:p-6 md:text-2xl"
-		>Je suis Killian</a
-	>
+
+	{#if !$page.data.session}
+		<a
+			href="/auth/signin"
+			class="hover:decoration-400 rounded-md border-2 border-primary-400 p-4 text-xl text-primary-400 hover:underline hover:underline-offset-2 md:p-6 md:text-2xl"
+			>Je suis Killian</a
+		>
+	{:else}
+		<a
+			href="/killian"
+			class="hover:decoration-400 rounded-md border-2 border-primary-400 p-4 text-xl text-primary-400 hover:underline hover:underline-offset-2 md:p-6 md:text-2xl"
+			>Gérer mes retards</a
+		>
+	{/if}
 </main>
