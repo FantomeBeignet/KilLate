@@ -9,6 +9,9 @@ import {
 import { redirect } from '@sveltejs/kit';
 import type { Handle } from '@sveltejs/kit';
 import { sequence } from '@sveltejs/kit/hooks';
+import { createContext } from '$lib/trpc/context';
+import { router } from '$lib/trpc/router';
+import { createTRPCHandle } from 'trpc-sveltekit';
 
 const authorize = (async ({ event, resolve }) => {
 	if (event.url.pathname.startsWith('/killian')) {
@@ -23,6 +26,8 @@ const authorize = (async ({ event, resolve }) => {
 	return result;
 }) satisfies Handle;
 
+const trpcHandle = createTRPCHandle({ router, createContext });
+
 export const handle: Handle = sequence(
 	SvelteKitAuth({
 		// @ts-ignore
@@ -35,5 +40,6 @@ export const handle: Handle = sequence(
 			}
 		}
 	}),
-	authorize
+	authorize,
+	trpcHandle
 );
