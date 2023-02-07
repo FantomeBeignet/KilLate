@@ -66,16 +66,16 @@
 </script>
 
 <main class="flex flex-col items-center justify-center gap-16 p-12">
-	<div class="flex flex-col items-center justify-center gap-4">
-		<span class="text-4xl font-semibold">L'argent</span>
-		<div class="flex flex-col items-center justify-center">
-			<span class="text-2xl font-semibold">Déposé : {$moneyStore}€</span>
-			<span class="text-2xl font-semibold">Manquant : {missing}€</span>
+	<div class="flex flex-col items-center justify-center gap-4 md:gap-8">
+		<span class="text-4xl font-semibold md:text-6xl md:font-bold">L'argent</span>
+		<div class="flex flex-col items-center justify-center md:gap-2">
+			<span class="text-2xl font-semibold md:text-4xl">Déposé : {$moneyStore}€</span>
+			<span class="text-2xl font-semibold md:text-4xl">Manquant : {missing}€</span>
 		</div>
 		<div class="flex items-center justify-center gap-4">
 			<input
 				type="number"
-				class="w-2/6 rounded-md border-2 border-primary-400 bg-neutral-900 p-4"
+				class="w-2/6 rounded-md border-2 border-primary-400 bg-neutral-900 p-4 md:text-xl"
 				placeholder="0"
 				bind:value={money}
 			/>
@@ -83,12 +83,12 @@
 				on:click={() => {
 					addMoney();
 				}}
-				class="rounded-md border-2 border-primary-400 bg-neutral-900 p-4 transition-colors hover:text-primary-400"
+				class="rounded-md border-2 border-primary-400 bg-neutral-900 p-4 transition-colors hover:text-primary-400 md:text-xl"
 				>Ajouter</button
 			>
 		</div>
 	</div>
-	<div class="flex flex-col items-center justify-center gap-6">
+	<div class="flex flex-col items-center justify-center gap-6 md:gap-8">
 		<h1 class="text-center text-4xl font-semibold md:text-6xl md:font-bold">Les retards</h1>
 		<div class="flex flex-col items-center justify-center gap-4 md:flex-row md:text-xl">
 			<input
@@ -107,7 +107,7 @@
 		</div>
 		{#if $lateStore.length > 0}
 			<div class="flex flex-col items-center justify-center gap-4">
-				<span class="text-2xl font-semibold">List des retards</span>
+				<span class="text-2xl font-semibold md:text-4xl">Liste des retards</span>
 				<div
 					class="w-full max-w-lg divide-y-2 divide-neutral-600 rounded-md border-2 border-primary-400 md:text-xl"
 				>
