@@ -1,6 +1,22 @@
 <script lang="ts">
 	import { lateStore } from '../store';
 	import { page } from '$app/stores';
+	import pusher from '$lib/pusher/client';
+	import { onMount, onDestroy } from 'svelte';
+
+	onMount(() => {
+		const channel = pusher.subscribe('delays');
+		channel.bind('add', (data: string) => {
+			lateStore.update((delays) => [...delays, data]);
+		});
+		channel.bind('rem', (data: string) => {
+			lateStore.update((delays) => delays.filter((delay) => delay !== data));
+		});
+	});
+
+	onDestroy(() => {
+		pusher.unsubscribe('delays');
+	});
 </script>
 
 <main class="my-auto flex flex-col items-center justify-between gap-36 p-12">
