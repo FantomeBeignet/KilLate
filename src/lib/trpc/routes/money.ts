@@ -11,12 +11,12 @@ export const money = t.router({
 			redis.set('money', value + input);
 		}
 	}),
-    get: t.procedure.query(async () => {
-        const data: number | null = await redis.get('money');
-        if (data === null) {
-            return 0;
-        } else {
-            return data;
-        }
-    })
+	get: t.procedure.query(async () => {
+		const data: number | null = await redis.get('money');
+		if (data === null) {
+			return 0;
+		} else {
+			return data;
+		}
+	})
 });

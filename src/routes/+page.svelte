@@ -19,13 +19,13 @@
 	{#if !$page.data.session}
 		<a
 			href="/auth/signin"
-			class="hover:decoration-400 rounded-md border-2 border-primary-400 p-4 text-xl md:p-6 md:text-2xl hover:text-primary-400 transition-colors"
+			class="hover:decoration-400 rounded-md border-2 border-primary-400 p-4 text-xl transition-colors hover:text-primary-400 md:p-6 md:text-2xl"
 			>Je suis Killian</a
 		>
 	{:else}
 		<a
 			href="/killian"
-			class="hover:decoration-400 rounded-md border-2 border-primary-400 p-4 text-xl hover:text-primary-400 transition-colors md:p-6 md:text-2xl"
+			class="hover:decoration-400 rounded-md border-2 border-primary-400 p-4 text-xl transition-colors hover:text-primary-400 md:p-6 md:text-2xl"
 			>Gérer mes retards</a
 		>
 	{/if}
