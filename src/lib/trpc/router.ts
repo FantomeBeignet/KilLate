@@ -1,9 +1,11 @@
 import { t } from '$lib/trpc/t';
 import type { inferRouterInputs, inferRouterOutputs } from '@trpc/server';
 import { delays } from '$lib/trpc/routes/delays';
+import { money } from '$lib/trpc/routes/money';
 
 export const router = t.router({
-	delays
+	delays,
+	money
 });
 
 export const caller = router.createCaller({});
