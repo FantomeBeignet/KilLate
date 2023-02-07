@@ -6,7 +6,7 @@
 
 	const loadDelays = async () => {
 		const data = await trpc().delays.get.query();
-		lateStore.set(data);
+		lateStore.set(data.sort().reverse());
 	};
 
 	onMount(() => {

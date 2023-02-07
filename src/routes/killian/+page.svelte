@@ -9,16 +9,13 @@
 	const addDelay = async () => {
 		lateStore.update((store) => {
 			store.push(timeString);
-			return store;
+			return store.sort().reverse();
 		});
 		await trpc().delays.add.mutate(timeString);
 	};
 
 	const remDelay = async (time: string) => {
-		lateStore.update((store) => {
-			store.splice(store.indexOf(time), 1);
-			return store;
-		});
+		lateStore.update((delays) => delays.filter((delay) => delay !== time));
 		await trpc().delays.rem.mutate(time);
 	};
 
