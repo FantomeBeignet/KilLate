@@ -6,7 +6,6 @@
 
 	onMount(() => {
 		const channel = pusher.subscribe('private-delays');
-		console.log(channel);
 		channel.bind('client-add', (data: string) => {
 			lateStore.update((delays) => [...delays, data]);
 		});

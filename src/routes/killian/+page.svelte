@@ -7,13 +7,6 @@
 	let channel: Channel;
 	onMount(() => {
 		channel = pusher.subscribe('private-delays');
-		console.log(channel);
-		channel.bind('pusher:subscription_succeded', () => {
-			console.log('Subbed');
-		});
-		channel.bind('pusher:subscription_error', (error: unknown) => {
-			console.log(error);
-		});
 	});
 	const now = new Date();
 	now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
