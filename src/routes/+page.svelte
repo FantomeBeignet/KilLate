@@ -5,11 +5,12 @@
 	import { onMount, onDestroy } from 'svelte';
 
 	onMount(() => {
-		const channel = pusher.subscribe('delays');
-		channel.bind('add', (data: string) => {
+		const channel = pusher.subscribe('private-delays');
+		console.log(channel);
+		channel.bind('client-add', (data: string) => {
 			lateStore.update((delays) => [...delays, data]);
 		});
-		channel.bind('rem', (data: string) => {
+		channel.bind('client-rem', (data: string) => {
 			lateStore.update((delays) => delays.filter((delay) => delay !== data));
 		});
 	});

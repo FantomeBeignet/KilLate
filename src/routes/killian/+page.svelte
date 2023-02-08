@@ -1,7 +1,20 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { lateStore } from '../../store';
 	import { trpc } from '$lib/trpc/client';
+	import pusher from '$lib/pusher/client';
 
+	let channel: Channel;
+	onMount(() => {
+		channel = pusher.subscribe('private-delays');
+		console.log(channel);
+		channel.bind('pusher:subscription_succeded', () => {
+			console.log('Subbed');
+		});
+		channel.bind('pusher:subscription_error', (error: unknown) => {
+			console.log(error);
+		});
+	});
 	const now = new Date();
 	now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
 	let timeString = now.toISOString().slice(0, 16);
@@ -11,11 +24,13 @@
 			store.push(timeString);
 			return store.sort().reverse();
 		});
+		channel.trigger('client-add', timeString);
 		await trpc().delays.add.mutate(timeString);
 	};
 
 	const remDelay = async (time: string) => {
 		lateStore.update((delays) => delays.filter((delay) => delay !== time));
+		channel.trigger('client-rem', timeString);
 		await trpc().delays.rem.mutate(time);
 	};
 
@@ -29,8 +44,8 @@
 	}
 
 	import { moneyStore } from '../../store';
-	import { onMount } from 'svelte';
 	import { z } from 'zod';
+	import type { Channel } from 'pusher-js';
 
 	const loadMoney = async () => {
 		const data = await trpc().money.get.query();
