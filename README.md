@@ -1,38 +1,15 @@
-# create-svelte
+# KilLate
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Contexte
 
-## Creating a project
+Après le TN Event 2023, Killian a promis qu'il donnerait 1€ par retard qu'il aurait entre les deux events. Du coup voici un petit site pour compter ses retards ;)
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Utilisation
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+Tout le monde a accès à la page d'accueil, sur laquelle est affiché le nombre de retard de notre cher Killian.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+Killian a accès à une page de gestion, sur laquelle il peut ajouter ou retirer des retards. Chaque ajout est automatiquement synchronisé avec tous les autres clients.
 
-## Developing
+## Techs
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Ce site est fait avec [SvelteKit](https://kit.svelte.dev/), [tRPC-SvelteKit](https://icflorescu.github.io/trpc-sveltekit/), [Pusher](https://pusher.com/) pour les mises à jour en temps réel et utilise [TailwindCSS](https://tailwindcss.com/) pour le styling. La base de données est une instance Redis hébergée sur [Upstash](https://upstash.com/), et le site lui même est hébergé sur [Vercel](https://vercel.com/).
