@@ -1,7 +1,6 @@
 import type { RequestHandler } from './$types';
 import pusher from '$lib/pusher/server';
 import { error, json } from '@sveltejs/kit';
-import { Response } from 'pusher';
 
 export const POST = (async ({ request }) => {
 	const body = await request.formData();
